@@ -5,7 +5,8 @@
                 @if (Route::has('login'))
                 @auth
                 <a href="{{ url('/dashboard') }}"
-                    class="hover:bg-coklat5 text-white px-3 py-2 rounded-md text-sm font-medium">Dashboard</a>
+                    class="hover:bg-coklat5 text-white px-3 py-2 rounded-md text-sm font-medium">
+                    {{ Auth::user()->name }}</a>
                 @else
                 <a href="{{ route('login') }}"
                     class="hover:bg-coklat5 text-white px-3 py-2 rounded-md text-sm font-medium">Log
@@ -31,7 +32,8 @@
                 @if (Route::has('login'))
                 @auth
                 <a href="{{ url('/dashboard') }}"
-                    class="hidden lg:block hover:bg-coklat5 text-white px-3 py-2 rounded-md text-sm font-medium">Dashboard</a>
+                    class="hidden lg:block hover:bg-coklat5 text-white px-3 py-2 rounded-md text-sm font-medium capitalize">
+                    {{ Auth::user()->name }}</a>
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
                     <a href="{{ route('logout') }}"

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\District;
 use App\Models\Regency;
+use App\Models\SkillUser;
 use Illuminate\Http\Request;
 
 class GlobalController extends Controller
@@ -22,5 +23,11 @@ class GlobalController extends Controller
 
         return view('location.district',compact('district'));
 
+    }
+
+    public function search(){
+
+        $worker = SkillUser::whereSkill_id(request('skill_id'))->get();
+        return $worker;
     }
 }

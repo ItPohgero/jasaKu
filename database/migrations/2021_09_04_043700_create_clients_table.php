@@ -17,6 +17,11 @@ class CreateClientsTable extends Migration
             $table->id();
             $table->string('code');
             $table->string('born')->nullable();
+            #Address
+            $table->foreignId('province_id')->nullable();
+            $table->foreignId('regency_id')->nullable();
+            $table->foreignId('district_id')->nullable();
+            #end address
             $table->foreignId('user_id');
             $table->softDeletes();
             $table->timestamps();

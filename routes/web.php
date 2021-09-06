@@ -38,6 +38,11 @@ Route::get('redirects', RedirectController::class);
 Route::get('dashboard', [RedirectController::class, 'dashboard'])->name('dashboard');
 
 /**
+ * Search Welcome 
+ */
+Route::get('search', [GlobalController::class, 'search'])->middleware(['auth:sanctum', 'verified'])->name('search');
+
+/**
  * Admin
  */
 Route::middleware(['auth:sanctum', 'verified', 'admin'])->prefix('admin')->group(function(){
