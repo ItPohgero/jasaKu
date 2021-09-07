@@ -33,7 +33,6 @@
                 <p class="mt-1 text-center font-bold">J A S A K U</p>
                 <div class="mt-3">
                     <form action="{{ route('search') }}" method="GET">
-                        @csrf
                         <select name="skill_id"
                             class="w-full dark:bg-gray-700 border-gray-300
                         focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">
