@@ -98,7 +98,7 @@ class PageWorkerController extends Controller
     public function location_show (){
         return view('worker.location.show',[
             'province'      => Province::whereId(worker()->province_id)->firstOrFail(),
-            'regency'      => Regency::whereId(worker()->regency_id)->firstOrFail(),
+            'regency'       => Regency::whereId(worker()->regency_id)->firstOrFail(),
             'district'      => District::whereId(worker()->district_id)->firstOrFail()
         ]);
     }

@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class District extends Model
 {
     use HasFactory;
+    
+    public function Workers(){
+        return $this->hasMany(Worker::class);
+    }
 }

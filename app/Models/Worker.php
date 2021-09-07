@@ -20,6 +20,14 @@ class Worker extends Model
         return $this->belongsTo(Province::class);
     }
 
+    public function regency(){
+        return $this->belongsTo(Regency::class);
+    }
+
+    public function district(){
+        return $this->belongsTo(District::class);
+    }
+
     public function user(){
         return $this->belongsTo(User::class);
     }

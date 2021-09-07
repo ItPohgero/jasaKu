@@ -4,8 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\District;
 use App\Models\Regency;
+use App\Models\Skill;
 use App\Models\SkillUser;
+use App\Models\Worker;
 use Illuminate\Http\Request;
+
+use function GuzzleHttp\Promise\each;
 
 class GlobalController extends Controller
 {
@@ -27,7 +31,11 @@ class GlobalController extends Controller
 
     public function search(){
 
-        $worker = SkillUser::whereSkill_id(request('skill_id'))->get();
-        return $worker;
+        $skill_user     = SkillUser::whereSkill_id(request('skill_id'))->get();
+        $skill          = Skill::whereId(request('skill_id'))->firstOrFail();
+        return view('search', [
+            'skill_user'        => $skill_user,
+            'skill'             => $skill,
+        ]);
     }
 }
