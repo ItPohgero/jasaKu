@@ -11,6 +11,35 @@ focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 r
 
     </select>
 </label>
-<div class="flex justify-end mt-6 text-sm">
-    <button class="py-2 px-4 bg-gray-800 text-white rounded-md" type="submit">Submit</button>
+@if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
+<div class="mt-3">
+    <x-jet-label for="terms">
+        <div class="flex items-center">
+            <x-jet-checkbox name="terms" id="terms" />
+
+            <div class="ml-2 text-xs">
+                {!! __('I agree to the :terms_of_service and :privacy_policy', [
+                'terms_of_service' => '<a target="_blank" href="'.route('terms.show').'"
+                    class="underline text-xs font-bold text-gray-600 hover:text-gray-900">'.__('Terms
+                    of Service').'</a>',
+                'privacy_policy' => '<a target="_blank" href="'.route('policy.show').'"
+                    class="underline text-xs font-bold text-gray-600 hover:text-gray-900">'.__('Privacy
+                    Policy').'</a>',
+                ]) !!}
+            </div>
+        </div>
+    </x-jet-label>
+</div>
+@endif
+<!-- modal div -->
+<div class="mt-6" x-data="{ open: false }">
+    <div class="flex items-center justify-end mt-4">
+        <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
+            {{ __('Already registered?') }}
+        </a>
+
+        <x-jet-button class="ml-4">
+            {{ __('Register') }}
+        </x-jet-button>
+    </div>
 </div>

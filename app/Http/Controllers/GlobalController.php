@@ -21,6 +21,7 @@ class GlobalController extends Controller
         return view('location.regency',compact('regency'));
 
     }
+    
     public function district($id){
 
         $district = District::where('regency_id',$id)->get();
