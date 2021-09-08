@@ -43,6 +43,9 @@ class CreateNewUser implements CreatesNewUsers
                 'code'          => 'w'. date('dmy').Str::random(5),
                 'nik'           => null,
                 'born'          => null,
+                'province_id'   => request('province_id'),
+                'regency_id'    => request('regency_id'),
+                'district_id'   => request('district_id'),
                 'disc'          => null,
                 'user_id'       => $user->id
             ]);
@@ -50,6 +53,9 @@ class CreateNewUser implements CreatesNewUsers
             Client::create([
                 'code'          => 'c'. date('dmy').Str::random(5),
                 'born'          => null,
+                'province_id'   => request('province_id'),
+                'regency_id'    => request('regency_id'),
+                'district_id'   => request('district_id'),
                 'user_id'       => $user->id
             ]);
         }

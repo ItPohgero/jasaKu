@@ -5,7 +5,6 @@
         
                 let province = $('#provinceid').val();
         
-                console.info(province);
                 $('#regencyShow').load('{{url("regency")}}/'+province, function(e) {});        
             }
 

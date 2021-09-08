@@ -97,18 +97,63 @@ focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" 
                         </x-jet-label>
                     </div>
                     @endif
+                    <!-- modal div -->
+                    <div class="mt-6" x-data="{ open: false }">
+                        <div class="flex items-center justify-end mt-4">
+                            <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
+                                {{ __('Already registered?') }}
+                            </a>
 
-                    <div class="flex items-center justify-end mt-4">
-                        <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                            {{ __('Already registered?') }}
-                        </a>
+                            <x-jet-button type="button" @click="open = true" class="ml-4">
+                                {{ __('Next To Register') }}
+                            </x-jet-button>
+                        </div>
 
-                        <x-jet-button class="ml-4">
-                            {{ __('Register') }}
-                        </x-jet-button>
+                        <!-- Dialog (full screen) -->
+                        <div class="absolute top-0 left-0 flex items-center justify-center w-full h-full" x-show="open">
+
+                            <!-- A basic modal dialog with title, body and one button to close -->
+                            <div class="h-auto p-4 text-left bg-white rounded shadow-xl md:max-w-xl"
+                                @click.away="open = false">
+                                <div class="flex justify-between items-center text-xs">
+                                    <h3 class="text-lg font-medium leading-6 text-gray-900">
+                                        Location Anda
+                                    </h3>
+                                    <button @click="open = false" type="button">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20"
+                                            fill="currentColor">
+                                            <path fill-rule="evenodd"
+                                                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="mt-3 text-left">
+
+                                    <div class="mt-2 w-full">
+                                        <label class="block text-sm w-full">
+                                            <span class="text-gray-700 dark:text-gray-400">Provinsi</span>
+                                            <select onchange="province()" id="provinceid" name="province_id" class="block w-full dark:bg-gray-700 border-gray-300
+focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">
+
+                                                <option selected>Pilih</option>
+                                                @foreach(\App\Models\Province::get() as $item)
+                                                <option value="{{$item->id}}">{{$item->name}}</option>
+
+                                                @endforeach
+
+                                            </select>
+                                        </label>
+                                        <div id="regencyShow"></div>
+                                        <div id="districtShow"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </form>
             </div>
         </div>
     </section>
+    <x-location-ajax></x-location-ajax>
 </x-guest-layout>

@@ -6,15 +6,10 @@
             <div class="lg:w-3/5 md:w-1/2 md:pr-16 lg:pr-0 pr-0">
                 @auth
                 <p class="text-xl text-white text-justify font-bold">Yey. Sekarang kamu bisa mencari pekerja di
-                    sekitarmu.</p>
+                    sekitar.</p>
                 <hr class="my-2 border-dashed border-white">
-                <p class="text-sm text-white text-justify">Kamu berapada pada wilayah Provinsi
-                    <strong class="text-yellow-800">{{ location_client('province')->name }}</strong>, Kabupaten / Kota
-                    <strong class="text-yellow-800">{{ location_client('regency')->name }}</strong>, Kecamatan
-                    <strong class="text-yellow-800">{{ location_client('district')->name }}</strong>. Jika anda
-                    berada dalam wilayah lain silahkan setting lokasi anda terlebih dahulu</p>
                 @else
-                <p class="text-xl text-white font-bold">Sorry. Kamu belum bisa mencari pekerja di sekitarmu. <br>
+                <p class="text-xl text-white font-bold">Sorry. Kamu belum bisa mencari pekerja di sekitar. <br>
                     Silahkan
                     LOGIN dulu </p>
                 @endauth

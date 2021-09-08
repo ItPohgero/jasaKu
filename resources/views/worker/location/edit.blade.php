@@ -17,9 +17,6 @@
             </label>
             <div id="regencyShow"></div>
             <div id="districtShow"></div>
-            <div class="flex justify-end mt-6 text-sm">
-                <button class="py-2 px-4 bg-gray-800 text-white rounded-md" type="submit">Submit</button>
-            </div>
         </div>
     </form>
     <x-location-ajax></x-location-ajax>
