@@ -99,12 +99,12 @@ focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" 
                         </div>
                     </div>
                     <hr class="border-dashed border-gray-400 mt-4">
-                    <div class="mt-2 w-full">
+                    <div class="mt-2">
                         <div class="flex justify-center gap-2">
-                            <label class="lock text-sm mt-4">
+                            <label class="block text-sm mt-4">
                                 <span class="text-gray-700 dark:text-gray-400">Provinsi</span>
                                 <select onchange="province()" id="provinceid" name="province_id"
-                                    class="block w-full dark:bg-gray-700 border-gray-300
+                                    class="block w-full dark:bg-gray-700 border-gray-300 text-sm
                                                 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">
 
                                     <option selected>Pilih</option>

@@ -30,6 +30,9 @@ Route::get('/', function () {
  */
 Route::get('regency/{id}', [GlobalController::class, 'regency']);
 Route::get('district/{id}', [GlobalController::class, 'district']);
+#Untuk dalam
+Route::get('regency1/{id}', [GlobalController::class, 'regency1']);
+Route::get('district1/{id}', [GlobalController::class, 'district1']);
 
 /**
  * Route redirect
@@ -77,8 +80,7 @@ Route::middleware(['auth:sanctum', 'verified', 'worker'])->prefix('worker')->gro
     Route::post('skill/store' , [PageWorkerController::class, 'skill_store'])->name('worker.skill.store');
     Route::get('skill/remove/{id}' , [PageWorkerController::class, 'skill_remove'])->name('worker.skill.remove');
     #Location
-    Route::get('location/edit', [PageWorkerController::class, 'location_edit'])->name('worker.location.edit');
-    Route::post('location/update', [PageWorkerController::class, 'location_update'])->name('worker.location.update');
+    Route::patch('location/update', [PageWorkerController::class, 'location_update'])->name('worker.location.update');
     Route::get('location/show', [PageWorkerController::class, 'location_show'])->name('worker.location.show');
 });
 

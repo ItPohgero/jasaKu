@@ -73,23 +73,14 @@ class PageWorkerController extends Controller
     }
 
     /**
-     * Informasi location
-     */
-    public function location_edit(){
-        return view('worker.location.edit',[
-            'province'          => Province::get(),
-            'regency'           => Regency::get(),
-            'district'          => District::get()
-        ]);
-    }
-
-    /**
      * Update Location
      */
     public function location_update(){
         $worker = Worker::whereUser_id(worker()->user_id)->firstOrFail();
         $worker->update(request()->all());
-        return Redirect::route('worker');
+
+        session()->flash('success', 'Data berhasil diupdate');
+        return Redirect::back();
     }
 
     /**
@@ -97,9 +88,12 @@ class PageWorkerController extends Controller
      */
     public function location_show (){
         return view('worker.location.show',[
-            'province'      => Province::whereId(worker()->province_id)->firstOrFail(),
-            'regency'       => Regency::whereId(worker()->regency_id)->firstOrFail(),
-            'district'      => District::whereId(worker()->district_id)->firstOrFail()
+            'p'                 => Province::whereId(worker()->province_id)->firstOrFail(),
+            'r'                 => Regency::whereId(worker()->regency_id)->firstOrFail(),
+            'd'                 => District::whereId(worker()->district_id)->firstOrFail(),
+            'province'          => Province::get(),
+            'regency'           => Regency::get(),
+            'district'          => District::get()
         ]);
     }
 

@@ -30,6 +30,22 @@ class GlobalController extends Controller
 
     }
 
+    public function regency1($id){
+
+        $regency = Regency::where('province_id',$id)->get();
+
+        return view('worker.location.regency',compact('regency'));
+
+    }
+    
+    public function district1($id){
+
+        $district = District::where('regency_id',$id)->get();
+
+        return view('worker.location.district',compact('district'));
+
+    }
+
     public function search(){
 
         $skill_user     = SkillUser::whereSkill_id(request('skill_id'))->get();

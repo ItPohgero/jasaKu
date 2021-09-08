@@ -16,7 +16,7 @@
         </span>
         <div class='md:flex shadow-lg'>
             <div
-                class="md:w-1/2 text-gray-800 bg-gray-100 p-8 sm:rounded-tr-lg md:rounded-tr-none md:rounded-bl-lg rounded-tl-lg">
+                class="md:w-1/2 text-gray-800 dark:text-gray-300 bg-gray-100 dark:bg-gray-800 p-8 sm:rounded-tr-lg md:rounded-tr-none md:rounded-bl-lg rounded-tl-lg">
                 <div class="w-full">
                     <h1 class="text-xl mb-5 font-bold capitalize">Skill anda</h1>
                     @foreach ($worker->skills as $item)
