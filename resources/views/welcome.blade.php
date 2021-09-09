@@ -28,11 +28,11 @@
                 <p class="mt-1 text-center font-bold">J A S A K U</p>
                 <div class="mt-3">
                     <form action="{{ route('search') }}" method="GET">
-                        <select name="skill_id"
+                        <select name="keyword"
                             class="w-full dark:bg-gray-700 border-gray-300
                         focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">
                             @foreach (App\Models\Skill::get() as $item)
-                            <option value="{{ $item->id }}">{{ $item->name }}</option>
+                            <option value="{{ $item->slug }}">{{ $item->name }}</option>
                             @endforeach
                         </select>
                         <button class="bg-gray-800 py-2 px-4 rounded-lg text-white mt-2 w-full"

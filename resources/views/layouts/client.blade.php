@@ -29,10 +29,10 @@
 
 <body>
     <div class="flex h-screen bg-gray-50 dark:bg-gray-900" :class="{ 'overflow-hidden': isSideMenuOpen}">
-        @include('worker.compo.dekstop-sidebar')
-        @include('worker.compo.mobile-sidebar')
+        @include('client.compo.dekstop-sidebar')
+        @include('client.compo.mobile-sidebar')
         <div class="flex flex-col flex-1">
-            @include('worker.compo.header')
+            @include('client.compo.header')
             <main class="h-full w-full overflow-y-auto text-gray-900 dark:text-gray-300">
                 <div class="px-4 py-4">
                     <section class="h-full pb-6 overflow-y-auto">

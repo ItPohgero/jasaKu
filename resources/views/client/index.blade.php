@@ -1,1 +1,4 @@
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga veritatis eius nulla quis amet eaque tempora! Accusamus ut est eos praesentium! Porro deserunt consequatur velit necessitatibus autem sit numquam laborum!
+<x-client-layout>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi velit perferendis at reprehenderit eos incidunt ea
+    consequatur quos? Consequatur ut totam repudiandae vero quae repellendus adipisci soluta iusto pariatur ea.
+</x-client-layout>

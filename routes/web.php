@@ -4,6 +4,7 @@
 use App\Http\Controllers\Admin\ClientController;
 use App\Http\Controllers\Admin\SkillController;
 use App\Http\Controllers\Admin\WorkerController;
+use App\Http\Controllers\Client\PageClientController;
 use App\Http\Controllers\GlobalController;
 use App\Http\Controllers\RedirectController;
 use App\Http\Controllers\TextSearchController;
@@ -84,10 +85,13 @@ Route::middleware(['auth:sanctum', 'verified', 'worker'])->prefix('worker')->gro
     Route::get('location/show', [PageWorkerController::class, 'location_show'])->name('worker.location.show');
 });
 
-
 /**
  * Client
  */
-Route::middleware(['auth:sanctum', 'verified', 'client'])->get('/client', function () {
-    return view('client/index');
-})->name('client');
+Route::middleware(['auth:sanctum', 'verified', 'client'])->prefix('client')->group(function(){
+    Route::view('index', 'client/index')->name('client');
+
+    #Request
+    Route::get('request/{client}/{worker}/{skill}', [PageClientController::class, 'request'])->name('client.request');
+    Route::post('order', [PageClientController::class, 'order'])->name('client.order');
+});
