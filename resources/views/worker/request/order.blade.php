@@ -68,8 +68,8 @@
                             <form action="{{ route('worker.cancel.order', $item->invoice) }}" method="post">
                                 @csrf
                                 @method('delete')
-                                <button
-                                    class="bg-red-800 py-2 px-5 text-white rounded-lg hover:bg-red-900">Tolak</button>
+                                <button class="bg-red-800 py-2 px-5 text-white rounded-lg hover:bg-red-900"
+                                    onclick="return confirm('Yankin, kamu akan tolak invoice {{ $item->invoice }}')">Tolak</button>
                             </form>
                         </div>
                     </td>

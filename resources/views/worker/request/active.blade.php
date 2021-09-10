@@ -58,14 +58,12 @@
                     <td class="px-4 py-3 text-sm">
                         @if ($item->status == true)
                         @if($item->point == null)
-                        <p>Active</p>
+                        <p class="bg-green-600 py-1 text-center px-3 rounded text-white">Active</p>
                         @else
                         <p>Selesai, Feedback <span
                                 class="bg-gray-800 py-1 px-3 text-xs text-white rounded-lg">{{$item->point}}
                                 Point</span></p>
                         @endif
-                        @else
-                        <p>Sedang memohon</p>
                         @endif
                     </td>
                 </tr>

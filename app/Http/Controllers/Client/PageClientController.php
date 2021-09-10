@@ -49,7 +49,7 @@ class PageClientController extends Controller
     }
 
     public function history(){
-        $attr = ModelsRequest::whereClient_id(client()->id)->get();
+        $attr = ModelsRequest::whereClient_id(client()->id)->latest()->get();
         return view('client.request.history', compact('attr'));
     }
 }
