@@ -15,7 +15,7 @@ focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 r
 <div class="mt-3">
     <x-jet-label for="terms">
         <div class="flex items-center">
-            <x-jet-checkbox name="terms" id="terms" />
+            <x-jet-checkbox name="terms" id="terms" required />
 
             <div class="ml-2 text-xs">
                 {!! __('I agree to the :terms_of_service and :privacy_policy', [

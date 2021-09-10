@@ -1,5 +1,5 @@
 <x-guest-layout>
-    <section class="text-gray-600 body-font bg-gray-100 min-h-screen">
+    <section class="text-gray-600 body-font bg-gradient-to-r from-gray-100 via-red-100 to-purple-100 min-h-screen">
         <div class="container xl:px-32 px-5 py-32 mx-auto flex flex-wrap items-center">
             <div class="lg:w-3/5 md:w-1/2 md:pr-16 lg:pr-0 pr-0">
                 <h1 class="title-font font-bold lg:text-7xl text-6xl text-yellow-600 text-center md:text-left ">JasaKu

@@ -18,6 +18,7 @@ class CreateWorkersTable extends Migration
             $table->string('code');
             $table->string('nik')-> nullable();
             $table->string('born')->nullable();
+            $table->string('phone')->nullable();
             #Address
             $table->foreignId('province_id')->nullable();
             $table->foreignId('regency_id')->nullable();

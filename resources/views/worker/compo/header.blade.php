@@ -1,4 +1,4 @@
-<header class="z-10 py-3 bg-white shadow-md dark:bg-gray-800">
+<header class="z-10 py-3 bg-gradient-to-r from-gray-100 via-red-100 shadow-md dark:bg-gray-800">
     <div class="container flex items-center justify-between h-full px-6 mx-auto text-yellow-600 dark:text-yellow-300">
         <!-- Mobile hamburger -->
         <button class="p-1 -ml-1 mr-5 rounded-md md:hidden focus:outline-none focus:shadow-outline-yellow"
@@ -20,7 +20,7 @@
                     </svg>
                 </div>
                 <input autocomplete="off" id="search" name="search"
-                    class="w-full pl-10 text-sm text-gray-700 placeholder-gray-600 bg-gray-100 border-0 rounded-full dark:placeholder-gray-500 dark:focus:shadow-outline-gray dark:focus:placeholder-gray-600 dark:bg-gray-700 dark:text-gray-200 focus:placeholder-gray-500 focus:bg-white focus:border-yellow-300 focus:outline-none focus:shadow-outline-yellow form-input py-3"
+                    class="w-full pl-10 text-sm text-gray-700 placeholder-gray-600 bg-white border-0 rounded-full dark:placeholder-gray-500 dark:focus:shadow-outline-gray dark:focus:placeholder-gray-600 dark:bg-gray-700 dark:text-gray-200 focus:placeholder-gray-500 focus:bg-white focus:border-yellow-300 focus:outline-none focus:shadow-outline-yellow form-input py-3"
                     type="text" placeholder="Global Search ..." aria-label="Search" />
             </div>
         </div>
@@ -47,11 +47,11 @@
             <!-- Profile menu -->
             <li class="relative">
                 @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
-                <button
+                <a href="{{ route('profile.show') }}"
                     class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition">
                     <img class="h-8 w-8 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}"
                         alt="{{ Auth::user()->name }}" />
-                </button>
+                </a>
                 @else
                 <span class="inline-flex rounded-md">
                     <a href="{{ route('profile.show') }}"

@@ -8,7 +8,6 @@ use App\Models\Request as ModelsRequest;
 use App\Models\Skill;
 use App\Models\User;
 use App\Models\Worker;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Str;
 
@@ -41,6 +40,16 @@ class PageClientController extends Controller
 
         ModelsRequest::create($attr);
 
-        return Redirect::back();
+        return Redirect::route('client.invoice', $attr['invoice']);
+    }
+
+    public function invoice($invoice){
+        $req = ModelsRequest::whereInvoice($invoice)->firstOrFail();
+        return view('client/request/invoice', compact('req'));
+    }
+
+    public function history(){
+        $attr = ModelsRequest::whereClient_id(client()->id)->get();
+        return view('client.request.history', compact('attr'));
     }
 }

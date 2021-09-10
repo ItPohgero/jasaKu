@@ -1,4 +1,4 @@
-<nav class="bg-gradient-to-r from-coklat1 via-yellow-800 to-coklat4 fixed bottom-0 w-full">
+<nav class="bg-gradient-to-r from-coklat1 via-yellow-800 to-coklat4 fixed bottom-0 w-full py-2 md:py-0">
     <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
         <div class="relative flex items-center justify-between py-2">
             <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -20,8 +20,6 @@
                 </div>
                 <div class="hidden sm:block sm:ml-6">
                     <div class="flex space-x-4">
-                        <a href="#" class="hover:bg-coklat2 text-white px-3 py-2 rounded-md text-sm font-medium"
-                            aria-current="page">Dokumentasi</a>
                         <a href="#" class="hover:bg-coklat2 text-white px-3 py-2 rounded-md text-sm font-medium"
                             aria-current="page">Dokumentasi</a>
                     </div>

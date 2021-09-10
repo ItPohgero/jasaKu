@@ -17,6 +17,13 @@
                     name="born" type="date" placeholder="00-00-0000" />
                 <x-error for="born"></x-error>
             </label>
+            <label class="block text-sm mt-4">
+                <span class="text-gray-700 dark:text-gray-400">Phone</span>
+                <input
+                    class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                    name="phone" type="text" placeholder="08x xxx xxx xxx" />
+                <x-error for="phone"></x-error>
+            </label>
             <label class="block mt-4 text-sm">
                 <span class="text-gray-700 dark:text-gray-400">Description</span>
                 <textarea

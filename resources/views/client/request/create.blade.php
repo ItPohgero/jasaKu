@@ -35,8 +35,8 @@
                 <h2 class="title-font font-semibold text-gray-800 tracking-wider text-sm mb-3">Request</h2>
                 <form action="{{ route('client.order') }}" method="POST" autocomplete="off">
                     @csrf
-                    <input type="hidden" name="client_id" value="{{ $dataClient->user->id }}">
-                    <input type="hidden" name="worker_id" value="{{ $dataWorker->user->id }}">
+                    <input type="hidden" name="client_id" value="{{ $dataClient->id }}">
+                    <input type="hidden" name="worker_id" value="{{ $dataWorker->id }}">
                     <input type="hidden" name="skill_id" value="{{ $skill->id }}">
                     <div>
                         <label for="date" class="text-xs">Tanggal dan jam dimulai kerja</label>

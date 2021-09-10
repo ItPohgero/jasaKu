@@ -52,7 +52,6 @@ class CreateNewUser implements CreatesNewUsers
         }elseif($input['role'] == 'client'){
             Client::create([
                 'code'          => 'c'. date('dmy').Str::random(5),
-                'born'          => null,
                 'province_id'   => request('province_id'),
                 'regency_id'    => request('regency_id'),
                 'district_id'   => request('district_id'),

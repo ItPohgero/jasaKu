@@ -22,6 +22,9 @@ class CreateRequestsTable extends Migration
             $table->timestamp('date');
             $table->string('phone')->nullable();
             $table->text('notes');
+            $table->bigInteger('point')->nullable();
+            $table->boolean('status')->default(false);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

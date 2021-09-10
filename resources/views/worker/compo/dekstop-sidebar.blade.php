@@ -73,6 +73,42 @@
                 </x-nav-link>
             </li>
             <li class="relative px-6 py-3">
+                <x-nav-link href="{{ route('worker.request.order') }}"
+                    :active="request()->routeIs('worker.request.order')">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                    </svg>
+                    <span class="ml-4 flex w-full justify-between items-center">
+                        <span>Request</span>
+                        <div class="text-xs">
+                            <span
+                                class="text-red-500">{{ \App\Models\Request::whereWorker_id(worker()->id)->whereStatus(false)->count() }}</span>
+                        </div>
+                    </span>
+                </x-nav-link>
+            </li>
+            <li class="relative px-6 py-3">
+                <x-nav-link href="{{ route('worker.request.active') }}"
+                    :active="request()->routeIs('worker.request.active')">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span class="ml-4 flex w-full justify-between items-center">
+                        <span>Active Request</span>
+                        <div class="text-xs">
+                            <span
+                                class="text-red-500">{{ \App\Models\Request::whereWorker_id(worker()->id)->whereStatus(true)->count() }}</span>
+                        </div>
+                    </span>
+                </x-nav-link>
+            </li>
+            <li class="relative px-6 py-3">
                 @if (\App\Models\Worker::whereProvince_id(null)->first())
                 <x-nav-link href="{{ route('worker.location.edit') }}"
                     :active="request()->routeIs('worker.location.edit')">

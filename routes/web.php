@@ -83,6 +83,11 @@ Route::middleware(['auth:sanctum', 'verified', 'worker'])->prefix('worker')->gro
     #Location
     Route::patch('location/update', [PageWorkerController::class, 'location_update'])->name('worker.location.update');
     Route::get('location/show', [PageWorkerController::class, 'location_show'])->name('worker.location.show');
+    #Request
+    Route::get('request/order', [PageWorkerController::class, 'request_order'])->name('worker.request.order');
+    Route::delete('cancel/{invoice}', [PageWorkerController::class, 'cancel_order'])->name('worker.cancel.order');
+    Route::get('request/active', [PageWorkerController::class, 'request_active'])->name('worker.request.active');
+    Route::patch('deal/{invoice}', [PageWorkerController::class, 'deal_order'])->name('worker.deal.order');
 });
 
 /**
@@ -90,8 +95,11 @@ Route::middleware(['auth:sanctum', 'verified', 'worker'])->prefix('worker')->gro
  */
 Route::middleware(['auth:sanctum', 'verified', 'client'])->prefix('client')->group(function(){
     Route::view('index', 'client/index')->name('client');
-
+    
     #Request
-    Route::get('request/{client}/{worker}/{skill}', [PageClientController::class, 'request'])->name('client.request');
+    Route::get('request-order/{client}/{worker}/{skill}/'.date('dmydmymd'), [PageClientController::class, 'request'])->name('client.request');
     Route::post('order', [PageClientController::class, 'order'])->name('client.order');
+    Route::get('invoice/history', [PageClientController::class, 'history'])->name('client.invoice.history');
+    Route::get('invoice/{invoice}', [PageClientController::class, 'invoice'])->name('client.invoice');
+    
 });
