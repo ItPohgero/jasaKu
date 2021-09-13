@@ -16,25 +16,15 @@ class RedirectController extends Controller
      */
     public function __invoke(Request $request)
     {
-        $role = Auth::user()->roles;
-        foreach($role as $a):
-            # Admin
-            if($a->name     == 'admin'):
-                session()->put('admin',true);
-                return Redirect::route('admin');
-            # Worker
-            elseif($a->name == 'worker'):
-                session()->put('worker',true);
-                return Redirect::route('worker');
-            # Client
-            elseif($a->name == 'client'):
-                session()->put('client',true);
-                return redirect()->to('/');
-            else:
-                return "LOGOUT";
-            endif;
-        endforeach;
-
+         if(role()     == 'admin'){
+             return Redirect::route('admin');
+         }
+         if(role()     == 'worker'){
+             return Redirect::route('worker');
+         }
+         if(role()     == 'client'){
+             return redirect()->to('/');
+         }
     }
 
     /**

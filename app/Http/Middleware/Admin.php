@@ -16,7 +16,7 @@ class Admin
      */
     public function handle(Request $request, Closure $next)
     {
-         if(!session('admin')){
+         if(role() != 'admin'){
             return abort(404);
         }
         return $next($request);

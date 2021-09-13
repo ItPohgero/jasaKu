@@ -2,7 +2,7 @@
     <div class="p-1 text-gray-900 bg-gray-50 shadow-xl border-2 border-white rounded-xl">
         <div class="flex justify-between gap-3 p-1">
             @auth
-            <x-nav-bar href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+            <x-nav-bar href="{{ route('client') }}" :active="request()->routeIs('client')">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                     <path fill-rule="evenodd"
                         d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z"
@@ -34,6 +34,19 @@
                     <path d="M9 11H3v5a2 2 0 002 2h4v-7zM11 18h4a2 2 0 002-2v-5h-6v7z" />
                 </svg>
             </x-nav-bar>
+            @auth
+            <form method="POST" action="{{ route('logout') }}">
+                @csrf
+                <a class="bg-red-200 px-3 py-2 rounded-xl flex items-center justify-center text-white"
+                    href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </a>
+            </form>
+            @else
             <x-nav-bar href="{{ route('terms.show') }}" :active="request()->routeIs('terms.show')">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                     <path fill-rule="evenodd"
@@ -41,6 +54,7 @@
                         clip-rule="evenodd" />
                 </svg>
             </x-nav-bar>
+            @endauth
         </div>
     </div>
 </nav>

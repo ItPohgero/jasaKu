@@ -19,13 +19,14 @@
 </head>
 
 <body>
-    <div class="sticky top-0 bg-red-400 py-3 text-center text-xs text-white z-50">
+    <div
+        class="sticky top-0 bg-gradient-to-r from-red-500 via-red-900 to-red-500 py-3 text-center text-xs text-white z-50">
         Dignitas Academy | Kelompok 5
     </div>
     <div class="flex justify-center bg-gradient-to-r from-gray-100 via-red-100 to-purple-100">
         <div class="sm:w-96 w-full min-h-screen bg-white  shadow-lg">
             {{ $slot }}
-            <x-navbar-guest></x-navbar-guest>
+            <x-navbar-guest-client />
         </div>
     </div>
 </body>

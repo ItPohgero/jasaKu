@@ -17,7 +17,7 @@ class Worker
      */
     public function handle(Request $request, Closure $next)
     {
-         if(!session('worker')){
+         if(role() != 'worker'){
             return abort(404);
         }
         return $next($request);

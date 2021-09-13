@@ -28,7 +28,8 @@
 </head>
 
 <body>
-    <div class="flex h-screen bg-gray-50 dark:bg-gray-900" :class="{ 'overflow-hidden': isSideMenuOpen}">
+    <div class="flex min-h-screen bg-gradient-to-t from-white to-gray-100 dark:bg-gray-900"
+        :class="{ 'overflow-hidden': isSideMenuOpen}">
         @include('client.compo.dekstop-sidebar')
         @include('client.compo.mobile-sidebar')
         <div class="flex flex-col flex-1">
@@ -44,6 +45,9 @@
             </main>
         </div>
     </div>
+    <span class="md:hidden">
+        <x-navbar-guest-client />
+    </span>
     @stack('modals')
 
     @livewireScripts

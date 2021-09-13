@@ -17,7 +17,7 @@ class Client
      */
     public function handle(Request $request, Closure $next)
     {
-         if(!session('client')){
+         if(role() != 'client'){
             return abort(404);
         }
         return $next($request);
