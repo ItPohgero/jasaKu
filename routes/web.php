@@ -42,9 +42,15 @@ Route::get('redirects', RedirectController::class);
 Route::get('dashboard', [RedirectController::class, 'dashboard'])->name('dashboard');
 
 /**
+ * Coming soon
+ */
+
+ Route::view('coming-soon', 'coming-soon')->name('soon');
+
+/**
  * Search Welcome 
  */
-Route::get('search', [GlobalController::class, 'search'])->middleware(['auth:sanctum', 'verified'])->name('search');
+Route::get('search', [GlobalController::class, 'search'])->middleware(['auth:sanctum', 'verified', 'search'])->name('search');
 
 /**
  * Admin

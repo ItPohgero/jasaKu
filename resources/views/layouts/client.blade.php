@@ -34,9 +34,9 @@
         <div class="flex flex-col flex-1">
             @include('client.compo.header')
             <main class="h-full w-full overflow-y-auto text-gray-900 dark:text-gray-300">
-                <div class="px-4 py-4">
+                <div class="px-1 py-4">
                     <section class="h-full pb-6 overflow-y-auto">
-                        <div class="container grid px-2 mx-auto">
+                        <div class="container grid px-1 mx-auto">
                             {{ $slot }}
                         </div>
                     </section>

@@ -1,5 +1,5 @@
 <x-client-layout>
-    <nav class="flex bg-yellow-500 dark:bg-gray-800 items-center justify-between gap-3 rounded-t-xl w-full p-3">
+    <nav class="flex bg-yellow-500 dark:bg-gray-800 items-center justify-between gap-3 shadow-lg rounded-xl w-full p-1">
         <form method="GET">
             <input type="hidden" name="keyword" value="{{ request('keyword') }}">
             <input type="hidden" name="kota" value="show">
@@ -17,13 +17,12 @@
         </form>
     </nav>
     <div class="px-1">
-        <div class="bg-gray-100 dark:bg-gray-800 dark:text-gray-300 p-3 rounded-lg my-4 text-sm lowercase">
+        <div
+            class="bg-white text-gray-400 dark:bg-gray-800 dark:text-gray-300 p-3 rounded-lg my-2 text-xs text-justify shadow-lg lowercase">
             hay, kamu terdaftar pada lokasi {{ location_client('district')->name }},
             {{ location_client('regency')->name }}, {{ location_client('province')->name }}
         </div>
-        <div class="grid grid-cols-1 gap-2 md:grid-cols-4">
-
-
+        <div class="grid grid-cols-2 gap-2 md:grid-cols-4">
             @foreach ($skill_user as $item)
             @php
             $user = \App\Models\User::whereId($item->user_id)->firstOrFail();
@@ -36,16 +35,16 @@
             $worker->regency->name && location_client('district')->name == $worker->district->name)
             {{-- Batas content --}}
             <div class="rounded-lg shadow-lg">
-                <div class="bg-white dark:bg-gray-800 w-full py-4 flex items-center justify-center">
-                    <img class="h-32 w-32 rounded-full object-cover" src="{{ $user->profile_photo_url }}"
+                <div class="bg-white dark:bg-gray-800 w-full flex items-center justify-center rounded-lg">
+                    <img class="h-auto w-full rounded-t-lg  object-cover" src="{{ $user->profile_photo_url }}"
                         alt="{{ Auth::user()->name }}" />
                 </div>
                 <div class="text-gray-700 dark:text-gray-400">
-                    <div class="bg-gray-100 dark:bg-gray-700 py-3">
-                        <div class="mt-2 px-2 py-1 text-sm text-center capitalize font-bold">{{ $user->name }}</div>
-                        <div class="px-2 py-1 text-sm text-center text-blue-400">{{$skill->name}}</div>
-                        <hr class="my-2 border-dashed">
-                        <div class="px-2 py-1 text-xs italic lowercase text-center">
+                    <div class="bg-gray-50 dark:bg-gray-700">
+                        <div class="px-2 py-1 text-sm text-center capitalize font-bold">{{ $user->name }}</div>
+                        <div class="px-2 text-xs text-center text-blue-400">{{$skill->name}}</div>
+                        <hr class=" mt-1 border-dashed">
+                        <div class="px-1 mb-1 text-xs lowercase text-center">
                             {{ $worker->district->name }},
                             {{ $worker->regency->name }}, {{ $worker->province->name }}
                         </div>
