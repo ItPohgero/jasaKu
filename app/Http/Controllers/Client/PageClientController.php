@@ -52,4 +52,12 @@ class PageClientController extends Controller
         $attr = ModelsRequest::whereClient_id(client()->id)->latest()->get();
         return view('client.request.history', compact('attr'));
     }
+
+    public function feedback($invoice){
+        $req = ModelsRequest::whereInvoice($invoice)->firstOrFail();
+        $req->update([
+            'point'     => request('point')
+        ]);
+        return back();
+    }
 }

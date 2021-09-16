@@ -16,7 +16,7 @@
                     </div>
                 </div>
                 <h2
-                    class="title-font font-semibold text-white tracking-wider text-xs mb-3 bg-green-300 text-center py-2 mt-3">
+                    class="title-font font-semibold text-white tracking-wider text-xs mb-3 bg-yellow-300 text-center py-2 mt-3">
                     Skill request <strong>{{ $skill->name }}</strong></h2>
                 <div class="mt-4">
                     <p class="text-xs">Skill lain yang dimiliki</p>
@@ -29,7 +29,8 @@
                 </div>
             </div>
             <div class="flex flex-col md:w-1/2 md:pl-12 w-full mt-3">
-                <h2 class="title-font font-semibold text-white tracking-wider text-xs mb-3 bg-red-300 text-center py-2">
+                <h2
+                    class="title-font font-semibold text-white tracking-wider text-xs mb-3 bg-purple-300 text-center py-2">
                     Request</h2>
                 <form action="{{ route('client.order') }}" method="POST" autocomplete="off">
                     @csrf

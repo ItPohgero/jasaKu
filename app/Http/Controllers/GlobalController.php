@@ -47,7 +47,6 @@ class GlobalController extends Controller
     }
 
     public function search(){
-
         $skill          = Skill::whereSlug(request('keyword'))->first();
         $skill_user     = SkillUser::whereSkill_id($skill->id)->get();
         return view('client.search', [

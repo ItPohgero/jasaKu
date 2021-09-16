@@ -36,15 +36,17 @@
                 </span>
             </div>
 
-            <x-jet-secondary-button class="mt-2 mr-2" type="button" x-on:click.prevent="$refs.photo.click()">
-                {{ __('Select A New Photo') }}
-            </x-jet-secondary-button>
+            <div class="mt-3">
+                <x-jet-secondary-button class="mt-2 mr-2" type="button" x-on:click.prevent="$refs.photo.click()">
+                    {{ __('Select A New Photo') }}
+                </x-jet-secondary-button>
 
-            @if ($this->user->profile_photo_path)
-            <x-jet-secondary-button type="button" class="mt-2" wire:click="deleteProfilePhoto">
-                {{ __('Remove Photo') }}
-            </x-jet-secondary-button>
-            @endif
+                @if ($this->user->profile_photo_path)
+                <x-jet-secondary-button type="button" class="mt-2" wire:click="deleteProfilePhoto">
+                    {{ __('Remove Photo') }}
+                </x-jet-secondary-button>
+                @endif
+            </div>
 
             <x-jet-input-error for="photo" class="mt-2" />
         </div>

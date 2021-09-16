@@ -1,6 +1,6 @@
 <x-guest-layout>
     <div class="min-h-screen flex flex-col sm:justify-center items-center px-6 pt-20 pb-40">
-        <div class="w-full sm:max-w-md  px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg border">
+        <div class="w-full sm:max-w-md  px-6 py-4 bg-white shadow-md overflow-hidden rounded-lg sm:rounded-lg border">
             <div class="flex justify-center">
                 <img src="{{ asset('img/logo.svg') }}" class="w-6 h-6">
             </div>

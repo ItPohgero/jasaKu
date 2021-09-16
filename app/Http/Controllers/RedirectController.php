@@ -31,12 +31,14 @@ class RedirectController extends Controller
      * Chek route dashboard
      */
     public function dashboard(){
-        if(session('admin')){
-            return Redirect::route('admin');
-        }elseif(session('worker')){
-            return Redirect::route('worker');
-        }elseif('client'){
-            return Redirect::route('client');
-        }
+       if(role()     == 'admin'){
+             return Redirect::route('admin');
+         }
+         if(role()     == 'worker'){
+             return Redirect::route('worker');
+         }
+         if(role()     == 'client'){
+             return redirect()->route('client');
+         }
     }
 }

@@ -9,6 +9,7 @@ use App\Http\Controllers\GlobalController;
 use App\Http\Controllers\RedirectController;
 use App\Http\Controllers\TextSearchController;
 use App\Http\Controllers\Worker\PageWorkerController;
+use App\Models\Worker;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,7 +24,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome', [
+        'workers'        => Worker::get(),
+    ]);
 });
 
 /**
@@ -107,5 +110,6 @@ Route::middleware(['auth:sanctum', 'verified', 'client'])->prefix('client')->gro
     Route::post('order', [PageClientController::class, 'order'])->name('client.order');
     Route::get('invoice/history', [PageClientController::class, 'history'])->name('client.invoice.history');
     Route::get('invoice/{invoice}', [PageClientController::class, 'invoice'])->name('client.invoice');
+    Route::patch('feedback/{invoice}', [PageClientController::class, 'feedback'])->name('client.feedback');
     
 });

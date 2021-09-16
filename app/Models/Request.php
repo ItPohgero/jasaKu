@@ -16,6 +16,10 @@ class Request extends Model
         return $this->belongsTo(Worker::class);
     }
 
+    public function client(){
+        return $this->belongsTo(Client::class);
+    }
+
     public function skill(){
         return $this->belongsTo(Skill::class);
     }

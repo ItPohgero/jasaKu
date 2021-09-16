@@ -18,6 +18,10 @@ class SearchMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
+        if(role() != 'client'){
+            return Redirect::to('/')->with('warning', 'akses search hanya bisa diakses oleh client');
+        }
+
         $role = Auth::user()->roles;
         foreach($role as $a):
             if($a->name     == 'admin' || $a->name == 'worker'):
