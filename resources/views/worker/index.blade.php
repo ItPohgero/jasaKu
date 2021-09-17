@@ -1,4 +1,7 @@
 <x-worker-layout>
+    <div class="mb-3">
+        <img src="{{ asset('img/bgworker.jpg') }}" class="rounded-lg">
+    </div>
     <div class="grid grid-cols-2 gap-3 text-xs">
         @if (\App\Models\Worker::whereUser_id(Auth::user()->id)->whereNik(null)->first())
         <a href="{{ route('worker.edit') }}"
@@ -21,10 +24,48 @@
             </svg>
         </a>
         @endif
-        <div class="bg-white flex justify-center items-center p-3 rounded-lg shadow-lg">aASA</div>
-        <div class="bg-white flex justify-center items-center p-3 rounded-lg shadow-lg">SAA</div>
-        <div class="bg-white flex justify-center items-center p-3 rounded-lg shadow-lg">ghg</div>
-        <div class="bg-white flex justify-center items-center p-3 rounded-lg shadow-lg">hghg</div>
-        <div class="bg-white flex justify-center items-center p-3 rounded-lg shadow-lg">hgh</div>
+        <div class="bg-white flex justify-center items-center p-3 rounded-lg shadow-lg">
+            <div class="block">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mx-auto mb-2 text-yellow-600" viewBox="0 0 20 20"
+                    fill="currentColor">
+                    <path fill-rule="evenodd"
+                        d="M9.243 3.03a1 1 0 01.727 1.213L9.53 6h2.94l.56-2.243a1 1 0 111.94.486L14.53 6H17a1 1 0 110 2h-2.97l-1 4H15a1 1 0 110 2h-2.47l-.56 2.242a1 1 0 11-1.94-.485L10.47 14H7.53l-.56 2.242a1 1 0 11-1.94-.485L5.47 14H3a1 1 0 110-2h2.97l1-4H5a1 1 0 110-2h2.47l.56-2.243a1 1 0 011.213-.727zM9.03 8l-1 4h2.938l1-4H9.031z"
+                        clip-rule="evenodd" />
+                </svg>
+                <div>
+                    {{ point(worker()->id)}}
+                    Point Rata Rata
+                </div>
+            </div>
+        </div>
+        <div class="bg-white flex justify-center items-center p-3 rounded-lg shadow-lg">
+            <div class="block">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mx-auto mb-2 text-purple-500" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+                </svg>
+                <div>
+                    {{ os(worker()->id)}}/{{ oall(worker()->id)}}
+                    Order Sukses
+                </div>
+            </div>
+        </div>
+        <div class="bg-white flex justify-center items-center p-3 rounded-lg shadow-lg">
+            <div class="block">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mx-auto mb-2 text-red-500" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+                </svg>
+                <div>
+                    {{ og(worker()->id)}}/{{ oall(worker()->id)}}
+                    Order Ditolak
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mt-3 bg-white flex justify-center items-center p-3 rounded-lg shadow-lg text-xs font-bold">
+        {{ \App\Models\Request::whereWorker_id(worker()->id)->whereStatus(false)->count() }} Request belum di jawab
     </div>
 </x-worker-layout>

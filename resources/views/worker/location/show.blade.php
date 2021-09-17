@@ -1,7 +1,7 @@
 <x-worker-layout>
     <section class="text-gray-600 body-font">
         <div
-            class="container flex flex-wrap px-5 py-6 mx-auto items-center bg-white dark:bg-gray-800 dark:text-gray-300 rounded-2xl shadow-lg">
+            class="container flex flex-wrap px-2 py-6 mx-auto items-center bg-white dark:bg-gray-800 dark:text-gray-300 rounded-2xl shadow-lg">
             <div class="md:w-1/2 relative">
                 <div
                     class="bg-white-500 dark: w-full h-full absolute sm:rounded-bl-lg md:rounded-bl-none md:rounded-tr-lg rounded-br-lg">
@@ -61,7 +61,7 @@
                     </div>
                 </div>
             </div>
-            <div class="flex flex-col md:w-1/2 md:pl-12">
+            <div class="mx-3 flex flex-col md:w-1/2 md:pl-12">
                 <h2 class="title-font font-semibold text-gray-800 tracking-wider text-sm mb-3">LOCATION</h2>
                 <div class="w-full">
                     <h2 class="text-sm capitalize"><span class="font-bold text-yellow-800">Provinsi</span> :

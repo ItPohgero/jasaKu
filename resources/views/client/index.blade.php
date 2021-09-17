@@ -4,13 +4,13 @@
         <!-- LEFT PART -->
         <div class="flex flex-col lg:ml-14 xl:ml-28 max-w-sm lg:max-w-xl z-10">
             <h4 class="text-4xl text-center md:text-left font-bold text-white md:pb-2">
-                You need more informations?
+                Nantikan fitur yang akan mempermudah semuanya!
             </h4>
-            <p class="text-center md:text-left text-white opacity-70 md:pb-6">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            <p class="text-center md:text-left text-white opacity-70 md:pb-6 mt-3">
+                kami berkomitmen untuk memberikan solusi bagi kedua belah pihak
             </p>
             <p class="text-xs text-gray-200 hidden md:block">
-                consectetur adipiscing elit
+                kami berkomitmen untuk memberikan solusi bagi kedua belah pihak
             </p>
         </div>
 
@@ -39,14 +39,14 @@
                         fill="currentColor" />
                 </svg>
                 <span>
-                    download our PDF
+                    Kirim Request Fitur
                 </span>
             </a>
         </div>
 
         <!-- ATTENTION -->
         <p class="pt-8 text-xs block md:hidden z-10 text-white">
-            consectetur adipiscing elit
+            www.jasaku.com
         </p>
 
         <!-- DÉCORATION -->

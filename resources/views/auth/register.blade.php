@@ -8,19 +8,20 @@
         @error('terms')
         <p class="text-xs text-red-600 mt-1">{{ $message }}</p>
         @enderror
-        <form method="POST" action="{{ route('register') }}">
+        <form method="POST" action="{{ route('register') }}" autocomplete="off">
             @csrf
             <div class="mt-2">
                 <x-jet-label for="name" value="{{ __('Name') }}" />
-                <x-jet-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" autofocus
-                    autocomplete="name" />
+                <x-jet-input id="name" class="block mt-1 w-full text-sm" type="text" name="name" :value="old('name')"
+                    autofocus autocomplete="name" />
                 @error('name')
                 <p class="text-xs text-red-600 mt-1">{{ $message }}</p>
                 @enderror
             </div>
             <div class="mt-2">
                 <x-jet-label for="email" value="{{ __('Email') }}" />
-                <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" />
+                <x-jet-input id="email" class="block mt-1 w-full text-sm" type="email" name="email"
+                    :value="old('email')" />
                 @error('email')
                 <p class="text-xs text-red-600 mt-1">{{ $message }}</p>
                 @enderror
@@ -29,7 +30,7 @@
                 <div class="mt-2">
                     <x-jet-label for="password" value="{{ __('Password') }}" />
                     <input id="password" :type="show ? 'password' : 'text'"
-                        class="w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
+                        class="text-sm w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
                         name="password" autocomplete="new-password">
                     @error('password')
                     <p class="text-xs text-red-600 mt-1">{{ $message }}</p>
@@ -40,7 +41,7 @@
                         <div class="w-full">
                             <x-jet-label for="password" value="{{ __('Confirm Password') }}" />
                             <input id="password_confirmation" :type="show ? 'password' : 'text'"
-                                class="w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
+                                class="text-sm w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
                                 name="password_confirmation" autocomplete="new-password">
                         </div>
                         <div class="pt-6">
@@ -73,13 +74,13 @@
             <div
                 class="flex justify-between items-center gap-2 mt-2 bg-gradient-to-r from-purple-100 via-red-100 to-gray-100 text-gray-600 p-2 rounded-lg shadow-lg px-4">
                 <div class="text-center">
-                    <input type="radio" class="rounded border-gray-300 text-indigo-600 shadow-sm" name="role"
+                    <input type="radio" class="text-sm rounded border-gray-300 text-indigo-600 shadow-sm" name="role"
                         value="client" id="client">
                     <label class="block mt-2 text-xs uppercase font-bold" for="client">Client</label>
                 </div>
                 <div class="text-xs text-gray-7000">or</div>
                 <div class="text-center">
-                    <input type="radio" class="rounded border-gray-300 text-indigo-600 shadow-sm
+                    <input type="radio" class="text-sm rounded border-gray-300 text-indigo-600 shadow-sm
                 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="role"
                         value="worker" id="worker">
                     <label class="block mt-2 text-xs uppercase font-bold" for="worker">Worker</label>

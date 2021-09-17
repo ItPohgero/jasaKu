@@ -19,7 +19,7 @@
 </head>
 
 <body>
-    <div class="flex justify-center bg-gradient-to-r from-gray-100 via-red-100 to-purple-100">
+    <div class="flex justify-center bg-gradient-to-b from-gray-100 via-red-100 to-white">
         <div class="sm:w-3/12 w-full min-h-screen bg-white  shadow-lg">
             <div class="sticky flex items-center top-0 bg-gray-200 py-2 text-center text-xs z-50 px-3 text-gray-600">
                 <div class="mr-3">

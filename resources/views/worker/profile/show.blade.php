@@ -1,7 +1,7 @@
 <x-worker-layout>
     <section class="text-gray-600 body-font">
         <span
-            class="flex items-center justify-between p-4 mb-4 text-sm font-semibold text-yellow-100 bg-gradient-to-r from-yellow-600 to-yellow-400 rounded-lg shadow-md focus:outline-none focus:shadow-outline-yellow">
+            class="flex items-center justify-between px-4 py-2 mb-4 text-sm font-semibold text-yellow-100 bg-gradient-to-r from-yellow-600 to-yellow-400 rounded-lg shadow-md focus:outline-none focus:shadow-outline-yellow">
             <div class="flex items-center">
                 <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
                     <path
@@ -10,29 +10,29 @@
                 </svg>
                 <span class="uppercase">{{ worker()->code }}</span>
             </div>
-            <button @click="openModal" class="bg-yellow-500 text-white py-1 px-4 rounded-full shadow-sm">Edit
+            <button @click="openModal" class="bg-yellow-600 text-white py-1 px-4 rounded-full shadow-sm">Edit
                 Profile</button>
         </span>
-        <div class="container flex flex-wrap px-5 py-6 mx-auto items-center bg-white rounded-2xl shadow-lg">
+        <div class="container flex flex-wrap p-2 mx-auto items-center bg-white rounded-lg shadow-lg text-sm">
             <div
-                class="w-full md:w-1/2 md:pr-12 md:py-8 md:border-b-0 mb-10 md:mb-0 pb-10 bg-gradient-to-t from-yellow-100 to-gray-100 shadow-lg rounded-2xl p-3">
+                class="w-full md:w-1/2 md:pr-12 md:py-8 md:border-b-0 mb-10 md:mb-0 pb-10 bg-gray-100 shadow-lg rounded-lg p-3">
                 <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900 capitalize">
                     {{ worker()->name }}
                 </h1>
                 <div class="flex justify-between">
                     <div>
-                        <h1 class="font-bold text-green-500">Feedback Point</h1>
-                        <span>18756</span>
+                        <h1 class="font-bold text-green-500">Point Rata rata</h1>
+                        <span>{{ point(worker()->id) }} Point</span>
                     </div>
                     <div>
-                        <h1 class="font-bold text-green-500">Customer</h1>
-                        <span>645</span>
+                        <h1 class="font-bold text-green-500">Order S/C</h1>
+                        <span>{{ os(worker()->id). '/' . og(worker()->id)}} Order</span>
                     </div>
                 </div>
                 <p class="mt-3 text-xs text-justify">*Untuk melihat detail lebih jauh terkait profile, silahkan pergi ke
                     settings</p>
             </div>
-            <div class="flex flex-col md:w-1/2 md:pl-12">
+            <div class="flex flex-col md:w-1/2 md:pl-12 p-4">
                 <h2 class="title-font font-semibold text-gray-800 tracking-wider text-sm mb-3">PROFILE</h2>
                 <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-3">
                     <h2 class="text-sm capitalize"><span class="font-bold text-yellow-800">NIK</span> :

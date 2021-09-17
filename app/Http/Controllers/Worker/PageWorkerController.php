@@ -124,7 +124,7 @@ class PageWorkerController extends Controller
      * Request active
      */
     public function request_active(){
-         $attr = Request::whereWorker_id(worker()->id)->whereStatus(true)->get();
+         $attr = Request::whereWorker_id(worker()->id)->whereStatus(true)->latest()->get();
         return view('worker.request.active', compact('attr'));
     }
 

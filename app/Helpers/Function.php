@@ -88,12 +88,23 @@ if (!function_exists('os')) {
         return $count;
     }
 }
+
+# Order System sukses
+if (!function_exists('og')) {
+    function og($id)
+    {
+        #id : Worker ID
+        $count = Request::whereWorker_id($id)->onlyTrashed()->count();
+        return $count;
+    }
+}
+
 # Order System All
 if (!function_exists('oall')) {
     function oall($id)
     {
         #id : Worker ID
-        $count = Request::whereWorker_id($id)->count();
+        $count = Request::whereWorker_id($id)->withTrashed()->count();
         return $count;
     }
 }

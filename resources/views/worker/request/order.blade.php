@@ -9,6 +9,7 @@
                     <th class="px-4 py-3">Date / Request</th>
                     <th class="px-4 py-3">Phone</th>
                     <th class="px-4 py-3">Notes</th>
+                    <th class="px-4 py-3">Tawar</th>
                     <th class="px-4 py-3">Action</th>
                 </tr>
             </thead>
@@ -54,6 +55,9 @@
                     </td>
                     <td class="px-4 py-3 text-sm">
                         {{ $item->notes }}
+                    </td>
+                    <td class="px-4 py-3 text-sm">
+                        {{ number_format($item->skill->price) }} : {{ number_format($item->offer) }}
                     </td>
                     <td class="px-4 py-3 text-sm flex justify-center gap-2">
                         <div>

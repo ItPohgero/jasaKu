@@ -81,13 +81,13 @@
                                 <div class="pb-2 tracking-wide flex justify-between gap-2">
                                     <div class="posts">
                                         <div>
-                                            {{ os($dataWorker->user->id)}}/{{ oall($dataWorker->user->id)}}
+                                            {{ os($dataWorker->id)}}/{{ oall($dataWorker->id)}}
                                         </div>
                                         <p class="text-gray-400" style="font-size: 7pt;">Order Sukses</p>
                                     </div>
                                     <div class="posts">
                                         <div>
-                                            {{ point($dataWorker->user->id) }} / 100
+                                            {{ point($dataWorker->id) }} / 100
                                         </div>
                                         <p class="text-gray-400" style="font-size: 7pt;">X Points</p>
                                     </div>
@@ -176,7 +176,23 @@
             <div class="flex flex-col md:w-1/2 md:pl-12 w-full">
                 <h2
                     class="title-font font-semibold text-white tracking-wider text-xs mb-3 bg-purple-300 text-center py-2 rounded">
-                    Form Request</h2>
+                    Form Request
+                </h2>
+                <h2 class="grid grid-cols-2 gap-2 items-center text-xs">
+                    <span>Biaya Tambahan Luar Kecamatan</span>
+                    <span>Rp.
+                        @php
+                        $cek = ($dataWorker->district->id == location_client('district')->id) ? 0 : 20000
+
+                        @endphp
+                        {{ number_format($cek) }}
+                    </span>
+                    <span>Biaya Awal</span>
+                    <span>Rp {{number_format($skill->price) }}</span>
+                    <span>Total</span>
+                    <span class="font-bold">Rp {{ number_format($skill->price + $cek) }}</span>
+                </h2>
+                <hr class="my-3 border-dashed">
                 <form action="{{ route('client.order') }}" method="POST" autocomplete="off">
                     @csrf
                     <input type="hidden" name="client_id" value="{{ $dataClient->id }}">
@@ -197,7 +213,7 @@
                         </div>
                         <div class class="text-xs mt-2">
                             <label class="text-xs" for="offer">Tawar Harga (Harga awal
-                                Rp {{number_format($skill->price) }})</label>
+                                Rp {{ number_format($skill->price + $cek) }})</label>
                             <input type="number" name="offer" required
                                 class="w-full mt-2 dark:bg-gray-700 border-gray-300
                         focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">

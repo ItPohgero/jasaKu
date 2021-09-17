@@ -88,13 +88,13 @@
                 <div class="py-2 px-1 text-center tracking-wide grid grid-cols-2 gap-2">
                     <div class="posts">
                         <div style="font-size: 8pt" class="text-center">
-                            {{ os($item->id)}}/{{ oall($item->id)}}
+                            {{ os($worker->id)}}/{{ oall($worker->id)}}
                         </div>
                         <p class="text-gray-400" style="font-size: 7pt;">Order Sukses</p>
                     </div>
                     <div class="posts">
                         <div style="font-size: 8pt" class="text-center">
-                            {{ point($item->id) }} / 100
+                            {{ point($worker->id) }} / 100
                         </div>
                         <p class="text-gray-400" style="font-size: 7pt;">X Points</p>
                     </div>
@@ -105,7 +105,7 @@
                 <div class="bg-gradient-to-r from-gray-50 via-gray-100 to-gray-50 pb-2">
                     <div class="flex justify-center items-center">
                         <div class="rating">
-                            <div class="rating-upper" style="width: {{ point($item->id) }}%;">
+                            <div class="rating-upper" style="width: {{ point($worker->id) }}%;">
                                 <span>★</span>
                                 <span>★</span>
                                 <span>★</span>
