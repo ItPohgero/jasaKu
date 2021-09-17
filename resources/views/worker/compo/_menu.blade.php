@@ -12,7 +12,7 @@
 </ul>
 <ul>
     <li class="relative px-6 py-3">
-        @if (\App\Models\Worker::whereNik(null)->first())
+        @if (\App\Models\Worker::whereUser_id(Auth::user()->id)->whereNik(null)->first())
         <x-nav-link href="{{ route('worker.edit') }}" :active="request()->routeIs('worker.edit')">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-" fill="none" viewBox="0 0 24 24"
                 stroke="currentColor">

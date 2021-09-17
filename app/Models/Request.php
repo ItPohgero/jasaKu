@@ -10,7 +10,7 @@ class Request extends Model
 {
     use HasFactory;
     use SoftDeletes;
-    protected $fillable = ['invoice', 'client_id', 'worker_id', 'skill_id', 'date', 'phone','point', 'status', 'notes'];
+    protected $fillable = ['invoice', 'client_id', 'worker_id', 'skill_id', 'date', 'phone','point', 'status', 'notes', 'offer'];
 
     public function worker(){
         return $this->belongsTo(Worker::class);

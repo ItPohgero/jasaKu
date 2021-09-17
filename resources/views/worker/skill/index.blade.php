@@ -23,7 +23,8 @@
                     <div class="flex justify-between text-xs capitalize my-1 border-b border-dashed pb-2">
                         <span>* {{ $item->name }} |
                             Rp. {{ number_format($item->price) }}{{ $item->an }}</span>
-                        <a href="{{ route('worker.skill.remove', $item->id) }}">
+                        <a href="{{ route('worker.skill.remove', $item->id) }}"
+                            onclick="return confirm('apakah anda yakin?')">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
                                 fill="currentColor">
                                 <path fill-rule="evenodd"

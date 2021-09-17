@@ -20,6 +20,23 @@
             <div class="my-2 capitalize">: {{ $req->notes }}</div>
             <div class="my-2 capitalize">Point</div>
             <div class="my-2 capitalize">: {{ $req->point ?? 'nothing' }}</div>
+            <div class="my-2 capitalize">Harga Nego</div>
+            <div class="my-2 capitalize">: Rp. {{ number_format($req->skill->price) }}</div>
+            <div class="my-2 capitalize">Harga Tawar</div>
+            <div class="my-2 capitalize">: Rp. {{ number_format($req->offer) }}</div>
+        </div>
+        <hr class="border-dashed my-3">
+        <div class="text-xs">
+            Status request :
+            @if ($req->status == true)
+            @if ($req->point == null)
+            <span>Worker sedang bekerja</span>
+            @else
+            <span>Tugas worker selesai dan anda memberikan nilai {{ $req->point }}</span>
+            @endif
+            @else
+            <span>Sedang dalam proses penawaran</span>
+            @endif
         </div>
     </div>
 </x-client-layout>

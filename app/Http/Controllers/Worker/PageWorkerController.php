@@ -55,9 +55,12 @@ class PageWorkerController extends Controller
     /**
      * Skill store
      */
-    public function skill_store(){
+    public function  skill_store(){
         $user = User::whereId(worker()->user_id)->firstOrFail();
         $user->skills()->attach(request('skill_id'));
+
+        #Menghapus soft deletes request
+        Request::whereWorker_id(worker()->id)->whereSkill_id(request('skill_id'))->restore();
 
         return Redirect::route('worker.skill');
     }
@@ -67,6 +70,10 @@ class PageWorkerController extends Controller
     public function skill_remove($id){
         $user = User::whereId(worker()->user_id)->firstOrFail();
         $user->skills()->detach($id);
+        
+        #Menghapus soft deletes request
+        Request::whereWorker_id(worker()->id)->whereSkill_id($id)->delete();
+        
         session()->flash('success', 'Skill berhasil diremove'); 
         return Redirect::route('worker.skill');
     }

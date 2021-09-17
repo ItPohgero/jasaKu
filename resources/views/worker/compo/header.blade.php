@@ -10,9 +10,9 @@
             </svg>
         </button>
         <!-- Search input -->
-        <div class="flex flex-1 justify-center">
+        <div class="flex flex-1 justify-center items-center">
             <div class="relative w-full max-w-xl mr-3 text-gray-600">
-                <span class="text-xs">Sekarang jam : </span><span id="jam"></span>
+                <span class="text-xs">{{ date('d F Y') }} </span><span class="text-xs font-bold" id="jam"></span>
             </div>
         </div>
         <ul class="flex items-center flex-shrink-0 space-x-2">
@@ -59,12 +59,11 @@
     var jam = document.getElementById('jam');
                     
     function time() {
-    var d = new Date();
-    var s = d.getSeconds();
-    var m = d.getMinutes();
-    var h = d.getHours();
-    jam.textContent =
-    ("0" + h).substr(-2) + ":" + ("0" + m).substr(-2) + ":" + ("0" + s).substr(-2);
+    var d   = new Date();
+    var s   = d.getSeconds();
+    var m   = d.getMinutes();
+    var h   = d.getHours();
+    jam.textContent = ("0" + h).substr(-2) + ":" + ("0" + m).substr(-2) + ":" + ("0" + s).substr(-2);
     }
     
     setInterval(time, 1000);

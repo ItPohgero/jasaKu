@@ -109,6 +109,7 @@ Route::middleware(['auth:sanctum', 'verified', 'client'])->prefix('client')->gro
     Route::get('request-order/{client}/{worker}/{skill}/'.date('dmydmymd'), [PageClientController::class, 'request'])->name('client.request');
     Route::post('order', [PageClientController::class, 'order'])->name('client.order');
     Route::get('invoice/history', [PageClientController::class, 'history'])->name('client.invoice.history');
+    Route::get('invoice/sukses', [PageClientController::class, 'sukses'])->name('client.invoice.sukses');
     Route::get('invoice/{invoice}', [PageClientController::class, 'invoice'])->name('client.invoice');
     Route::patch('feedback/{invoice}', [PageClientController::class, 'feedback'])->name('client.feedback');
     
