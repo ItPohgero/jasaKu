@@ -2,26 +2,27 @@
     <div class="container py-2 grid mx-auto">
         <!-- CTA -->
         <span
-            class="flex items-center justify-between p-4 mb-4 text-sm font-semibold text-yellow-100 bg-gradient-to-r from-yellow-600 to-yellow-400 rounded-lg shadow-md focus:outline-none focus:shadow-outline-yellow">
+            class="flex items-center justify-between px-4 py-2 mb-4 text-sm font-semibold text-yellow-100 bg-gradient-to-r from-yellow-600 to-yellow-400 rounded-lg shadow-md focus:outline-none focus:shadow-outline-yellow">
             <div class="flex items-center">
                 <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
                     <path
                         d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
                     </path>
                 </svg>
-                <span class="uppercase">{{ $worker->skills->count() }} Skill yang anda miliki</span>
+                <span class="uppercase text-xs">{{ $worker->skills->count() }} Skill yang anda miliki</span>
             </div>
-            <button @click="openModal" class="bg-yellow-500 text-white py-1 px-4 rounded-full shadow-sm">Add
+            <button @click="openModal" class="bg-yellow-600 text-white py-1 px-4 rounded-full shadow-sm">Add
                 Skill</button>
         </span>
         <div class='md:flex shadow-lg'>
             <div
                 class="md:w-1/2 text-gray-800 dark:text-gray-300 bg-gray-100 dark:bg-gray-800 p-8 sm:rounded-tr-lg md:rounded-tr-none md:rounded-bl-lg rounded-tl-lg">
                 <div class="w-full">
-                    <h1 class="text-xl mb-5 font-bold capitalize">Skill anda</h1>
+                    <h1 class="text-xl mb-5 font-bold capitalize text-center text-gray-600">Skill anda</h1>
                     @foreach ($worker->skills as $item)
-                    <div class="flex justify-between text-sm capitalize font-bold my-1 border-b border-dashed pb-2">
-                        <span>* {{ $item->name }}</span>
+                    <div class="flex justify-between text-xs capitalize my-1 border-b border-dashed pb-2">
+                        <span>* {{ $item->name }} |
+                            Rp. {{ number_format($item->price) }}{{ $item->an }}</span>
                         <a href="{{ route('worker.skill.remove', $item->id) }}">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
                                 fill="currentColor">
@@ -41,8 +42,8 @@
                 <img class="h-full w-full object-cover sm:rounded-bl-lg md:rounded-bl-none md:rounded-tr-lg rounded-br-lg opacity-10"
                     src="{{ asset('img/skills.jpg') }}" alt="Banner" />
                 <div class="absolute top-10 w-full items-center">
-                    <div class="flex justify-center font-bold">SKILLS</div>
-                    <p class="p-3 text-sm text-justify">
+                    <div class="flex justify-center font-bold uppercase">Informasi</div>
+                    <p class="py-3 px-6 text-xs text-justify">
                         Orang akan menemukan anda berdasarkan kategori keterampilan
                     </p>
                 </div>
@@ -81,13 +82,15 @@
             <form action="{{ route('worker.skill.store') }}" method="POST">
                 <div class="mt-4 mb-6">
                     @csrf
-                    <div class="px-4 py-3 mb-8 dark:bg-gray-800">
+                    <div class="py-3 mb-8 dark:bg-gray-800">
                         <label class="block text-sm">
                             <span class="text-gray-700 dark:text-gray-400">Select Skills</span>
                             <select name="skill_id"
                                 class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-yellow-400 focus:outline-none focus:shadow-outline-yellow dark:text-gray-300 dark:focus:shadow-outline-gray form-input">
                                 @foreach ($skill as $item)
-                                <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                <option value="{{ $item->id }}">{{ $item->name }} |
+                                    <span>Rp. </span>{{ number_format($item->price) }}{{ $item->an }}
+                                </option>
                                 @endforeach
                             </select>
                         </label>

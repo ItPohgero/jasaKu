@@ -29,7 +29,9 @@ class SkillSeeder extends Seeder
         $skill->each(function ($c) {
             Skill::create([
                 'name'              => $c,
-                'slug'              => Str::slug($c.' ' . Str::random(6))
+                'slug'              => Str::slug($c.' ' . Str::random(6)),
+                'price'             => rand(30000, 100000),
+                'an'                => '@kg',
             ]);
         });
     }

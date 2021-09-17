@@ -57,10 +57,11 @@
                     <p class="text-gray-400" style="font-size: 7pt;">X Points</p>
                 </div>
             </div>
-            <p class="text-xs text-center py-1 text-gray-800 bg-gradient-to-r from-gray-200 via-red-300 to-yellow-200">
+            <p
+                class="text-xs text-center py-1 text-gray-800 bg-gradient-to-r from-gray-200 via-red-300 to-yellow-200 capitalize">
                 {{ $item->user->name }}</p>
             <div class="bg-gradient-to-r from-gray-50 via-gray-100 to-gray-50 pb-2">
-                <div class="flex justify-center pb-2 items-center">
+                <div class="flex justify-center items-center">
                     <div class="rating">
                         <div class="rating-upper" style="width: {{ point($item->id) }}%;">
                             <span>★</span>

@@ -17,6 +17,8 @@ class CreateSkillsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('slug');
+            $table->bigInteger('price');
+            $table->string('an');
             $table->timestamps();
         });
     }

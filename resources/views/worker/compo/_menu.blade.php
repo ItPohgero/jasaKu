@@ -1,6 +1,3 @@
-<span class="ml-6 text-sm font-bold text-gray-800 dark:text-gray-200 capitalize">
-    W - {{ Auth::user()->name }}
-</span>
 <ul class="mt-6">
     <li class="relative px-6 py-3">
         <x-nav-link href="{{ route('worker') }}" :active="request()->routeIs('worker')">
