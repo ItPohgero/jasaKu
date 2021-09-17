@@ -48,9 +48,9 @@
                 </div>
                 <div class="posts">
                     <div style="font-size: 8pt" class="text-center">
-                        {{ point($item->id) }} / 100
+                        {{ point($item->id) / 10 }} Points
                     </div>
-                    <p class="text-gray-400" style="font-size: 7pt;">X Points</p>
+                    <p class="text-gray-400" style="font-size: 7pt;">Rata-rata</p>
                 </div>
             </div>
             <div class="bg-gradient-to-r from-gray-50 via-gray-100 to-gray-50 pb-2">

@@ -94,9 +94,9 @@
                     </div>
                     <div class="posts">
                         <div style="font-size: 8pt" class="text-center">
-                            {{ point($worker->id) }} / 100
+                            {{ point($worker->id) / 10 }} Points
                         </div>
-                        <p class="text-gray-400" style="font-size: 7pt;">X Points</p>
+                        <p class="text-gray-400" style="font-size: 7pt;">Rata-rata</p>
                     </div>
                 </div>
                 <p
