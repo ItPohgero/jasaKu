@@ -49,6 +49,7 @@ Route::get('dashboard', [RedirectController::class, 'dashboard'])->name('dashboa
  */
 
  Route::view('coming-soon', 'coming-soon')->name('soon');
+ Route::view('hadiah', 'coming-soon')->name('hadiah');
 
 /**
  * Search Welcome 

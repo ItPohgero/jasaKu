@@ -11,7 +11,7 @@
             </div>
         </template>
     </div>
-    <div class="flex justify-between items-center mt-5 px-3">
+    <div class="flex justify-between items-center mt-5 px-3 mt-10">
         <button @click="previous()"
             class="translate-y-1/2 bg-gray-50 opacity-30 hover:opacity-100 rounded-full w-5 h-5 flex justify-center items-center shadow-md z-10">
             <svg class="w-3 h-3 font-bold text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"

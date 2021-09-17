@@ -12,7 +12,7 @@
             <div class="my-2 capitalize">: {{ $req->worker->user->name }}</div>
             <div class="my-2 capitalize">Skill</div>
             <div class="my-2 capitalize">: {{ $req->skill->name }}</div>
-            <div class="my-2 capitalize">Date</div>
+            <div class="my-2 capitalize">Working Request</div>
             <div class="my-2 capitalize">: {{ $req->date }}</div>
             <div class="my-2 capitalize">Phone</div>
             <div class="my-2 capitalize">: {{ $req->phone }}</div>
@@ -20,6 +20,7 @@
             <div class="my-2 capitalize">: {{ $req->notes }}</div>
             <div class="my-2 capitalize">Point</div>
             <div class="my-2 capitalize">: {{ $req->point ?? 'nothing' }}</div>
+            <div class="my-2 capitalize">Pengajuan Request</div>
             <div class="my-2 capitalize">Harga Nego</div>
             <div class="my-2 capitalize">: Rp. {{ number_format($req->skill->price) }}</div>
             <div class="my-2 capitalize">Harga Tawar</div>

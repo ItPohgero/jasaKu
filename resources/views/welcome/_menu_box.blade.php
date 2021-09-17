@@ -56,9 +56,9 @@
     </div>
 </section>
 <section class="grid grid-cols-5 text-center gap-2 px-3">
-    <span style="font-size: 6.5pt;" class="capitalize text-white">Style and Fashion</span>
-    <span style="font-size: 6.5pt;" class="capitalize text-white">Jasa Kebersihan dan Taman</span>
-    <span style="font-size: 6.5pt;" class="capitalize text-white">Perbaikan Elektronik</span>
-    <span style="font-size: 6.5pt;" class="capitalize text-white">Perbaikan Rumah</span>
-    <span style="font-size: 6.5pt;" class="capitalize text-white">Message & Reflexology</span>
+    <span style="font-size: 6.5pt;" class="capitalize text-white">Style and <br> Fashion</span>
+    <span style="font-size: 6.5pt;" class="capitalize text-white">Jasa Kebersihan <br> dan Taman</span>
+    <span style="font-size: 6.5pt;" class="capitalize text-white">Perbaikan <br> Elektronik</span>
+    <span style="font-size: 6.5pt;" class="capitalize text-white">Perbaikan <br> Rumah</span>
+    <span style="font-size: 6.5pt;" class="capitalize text-white">Pijat dan <br> Refleksi</span>
 </section>

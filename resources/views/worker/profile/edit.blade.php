@@ -3,18 +3,19 @@
         @csrf
         @method('patch')
         <div class="px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800">
+            <p class="mb-3 text-xs">Lengkapi data berikut ini untuk memulai bekerja dengan jasaku.com</p>
             <label class="block text-sm">
                 <span class="text-gray-700 dark:text-gray-400">NIK (Nomor Induk Keluarga)</span>
                 <input
                     class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                    name="nik" type="text" placeholder="xxxxxx" value="{{ old('nik') }}" />
+                    name="nik" type="text" placeholder="xxx xx xxxxxx xxxx" value="{{ old('nik') }}" />
                 <x-error for="nik"></x-error>
             </label>
             <label class="block text-sm mt-4">
                 <span class="text-gray-700 dark:text-gray-400">Tanggal Lahir</span>
                 <input
                     class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                    name="born" type="date" placeholder="00-00-0000" />
+                    name="born" type="date" />
                 <x-error for="born"></x-error>
             </label>
             <label class="block text-sm mt-4">
