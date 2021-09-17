@@ -17,11 +17,14 @@ class SkillSeeder extends Seeder
     {
         $skill = collect([
             'Home Service',
-            'Cleaning Service',
+            'Bersih Rumah',
             'Semir Sepatu',
             'Memasak',
             'Laundry',
-            'Potong Rumput'
+            'Potong Rumput',
+            'Potografi',
+            'Rias',
+            'Jahit Kain',
         ]);
         $skill->each(function ($c) {
             Skill::create([

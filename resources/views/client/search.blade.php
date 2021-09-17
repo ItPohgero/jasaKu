@@ -18,9 +18,13 @@
     </nav>
     <div class="px-1">
         <div
-            class="bg-white text-gray-400 dark:bg-gray-800 dark:text-gray-300 p-3 rounded-lg my-2 text-xs text-justify shadow-lg lowercase">
-            hay, kamu terdaftar pada lokasi {{ location_client('district')->name }},
-            {{ location_client('regency')->name }}, {{ location_client('province')->name }}
+            class="bg-white text-gray-400 dark:bg-gray-800 dark:text-gray-300 p-3 rounded-lg my-2 text-xs text-justify shadow-lg">
+            Pencarian kamu akan di filter berdasarkan lokasi kabupaten dan kecamatan dimana kamu daftarkan
+            <span class="font-bold">
+                {{ location_client('district')->name }},
+                {{ location_client('regency')->name }},
+                {{ location_client('province')->name }}
+            </span>
         </div>
         <div class="grid grid-cols-2 gap-2 md:grid-cols-4">
             @foreach ($skill_user as $item)

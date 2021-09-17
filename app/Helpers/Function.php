@@ -6,6 +6,7 @@ use App\Models\Client;
 use App\Models\District;
 use App\Models\Province;
 use App\Models\Regency;
+use App\Models\Request;
 use App\Models\Worker;
 
 if (!function_exists('role')) {
@@ -59,5 +60,40 @@ if (!function_exists('location_client')) {
         }elseif($set == 'district'){
             return District::whereId(client()->district_id)->firstOrFail();
         }
+    }
+}
+
+
+# Post
+if (!function_exists('point')) {
+    function point($id)
+    {
+        #id : Worker ID
+
+        $data = Request::whereWorker_id($id)->sum('point');
+        $count = Request::whereWorker_id($id)->whereStatus(true)->count();
+
+        if($count == 0){
+            return 0;
+        }
+        return ($data /  ($count * 100)) * 100;
+    }
+}
+# Order System sukses
+if (!function_exists('os')) {
+    function os($id)
+    {
+        #id : Worker ID
+        $count = Request::whereWorker_id($id)->whereStatus(true)->count();
+        return $count;
+    }
+}
+# Order System All
+if (!function_exists('oall')) {
+    function oall($id)
+    {
+        #id : Worker ID
+        $count = Request::whereWorker_id($id)->count();
+        return $count;
     }
 }
